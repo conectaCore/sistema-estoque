@@ -1,28 +1,30 @@
-name: Integração Contínua (CI)
+name: CI - index.html
 
-# Define quando o workflow será executado
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
+    
   pull_request:
-    branches: [ main, master ]
-
-# O que o workflow vai fazer
+    branches: [ main ]
+     
 jobs:
-  testar:
-    runs-on: ubuntu-latest # Sistema operacional do servidor do GitHub
-
+  build-test:
+    runs-on: ubuntu-latest
+  
     steps:
-    - name: Baixar o código do repositório
-      uses: actions/checkout@v4
+      - name: Baixar código do repositório<br/>
+        uses: actions/checkout@v4
+    
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+ 
+      - name: Instalar dependências
+        run: npm install
+    
+      - name: Rodar testes
+        run: npm test
 
-    - name: Configurar o Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-
-    - name: Instalar dependências
-      run: npm install
-
-    - name: Executar testes
-      run: npm test
+      - name: Build
+        run: npm run build
