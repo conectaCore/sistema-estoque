@@ -57,14 +57,15 @@
       </div>
 
       <div class="row g-3">
-        <div class="col-12 col-xl-5"><div class="panel h-100"><div class="panel-title"><h2>Estoque baixo</h2><span class="badge-soft warning">Atenção</span></div><div id="lowStock" class="empty-state">Nenhum produto abaixo do mínimo.</div></div></div>
-        <div class="col-12 col-xl-7"><div class="panel h-100"><div class="panel-title"><h2>Últimas movimentações</h2><button class="link-btn" data-page-link="movimentacoes">Ver todas</button></div><div id="recentMovements" class="list"></div></div></div>
+        <div class="col-12 col-xl-4"><div class="panel h-100"><div class="panel-title"><h2>Estoque baixo</h2><span class="badge-soft warning">Atenção</span></div><div id="lowStock" class="empty-state">Nenhum produto abaixo do mínimo.</div></div></div>
+        <div class="col-12 col-xl-4"><div class="panel h-100"><div class="panel-title"><h2>Vencimentos</h2><span class="badge-soft warning">Até 30 dias</span></div><div id="expiryAlerts" class="empty-state">Nenhum produto próximo do vencimento.</div></div></div>
+        <div class="col-12 col-xl-4"><div class="panel h-100"><div class="panel-title"><h2>Últimas movimentações</h2><button class="link-btn" data-page-link="movimentacoes">Ver todas</button></div><div id="recentMovements" class="list"></div></div></div>
       </div>
     </section>
 
     <section class="page" id="produtos">
       <div class="page-tools">
-        <div class="search-box"><i data-lucide="search"></i><input id="productSearch" placeholder="Buscar por nome ou fabricante"></div>
+        <div class="search-box"><i data-lucide="search"></i><input id="productSearch" placeholder="Buscar por nome, fabricante ou código de barras"></div>
         <button class="btn btn-primary" id="addProduct"><i data-lucide="plus"></i> Novo produto</button>
       </div>
       <div class="panel"><div class="table-responsive"><table class="table align-middle"><thead><tr><th>Produto</th><th>Fabricante</th><th>Vencimento</th><th>Valor</th><th>Estoque</th><th class="text-end">Ações</th></tr></thead><tbody id="productsTable"></tbody></table></div></div>
@@ -74,7 +75,7 @@
       <div class="page-tools">
         <div class="d-flex gap-2">
           <button class="btn btn-success" id="addEntry"><i data-lucide="arrow-down-to-line"></i> Entrada</button>
-          <button class="btn btn-danger" id="addExit"><i data-lucide="arrow-up-from-line"></i> Saída / Venda</button>
+          <button class="btn btn-danger" id="addExit"><i data-lucide="arrow-up-from-line"></i> Saída / Venda</button><button class="btn btn-primary" id="emitInvoiceBtn"><i data-lucide="file-text"></i> Emitir nota</button>
         </div>
       </div>
       <div class="panel"><div class="table-responsive"><table class="table align-middle"><thead><tr><th>Data</th><th>Tipo</th><th>Produto</th><th>Quantidade</th><th>Valor unit.</th><th>Total</th><th>Observação</th></tr></thead><tbody id="movementsTable"></tbody></table></div></div>

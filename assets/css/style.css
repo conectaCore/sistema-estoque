@@ -11,4 +11,36 @@
 .form-label{font-size:12px;color:#667085;font-weight:600}.form-control,.form-select{border-color:var(--border);padding:10px 12px;border-radius:8px;font-size:13px}footer{text-align:center;color:#9aa3b2;font-size:11px;padding:30px 0 10px}
 .invoice{font-family:Arial,sans-serif;color:#111;background:#fff;padding:8px}.invoice-header{text-align:center;border-bottom:1px dashed #999;padding-bottom:15px}.invoice-header h2{font-size:19px;margin:0 0 5px}.invoice-header div{font-size:11px}.invoice table{width:100%;border-collapse:collapse;margin-top:18px}.invoice th,.invoice td{border-bottom:1px solid #ddd;padding:8px;text-align:left;font-size:11px}.invoice-total{text-align:right;font-weight:bold;font-size:16px;margin-top:14px}
 @media(max-width:900px){.sidebar{transform:translateX(-100%);transition:.2s}.sidebar.open{transform:translateX(0)}.content{margin-left:0;width:100%;padding:18px}.mobile-only{display:grid}.topbar h1{font-size:22px}.topbar .btn{font-size:12px}.page-tools{flex-wrap:wrap}.search-box{width:100%}}
-@media print{body *{visibility:hidden!important}.invoice,.invoice *{visibility:visible!important}.invoice{position:absolute;left:0;top:0;width:100%}}
+
+/* Modelo de nota fiscal de venda a consumidor */
+.invoice-wrap{display:flex;justify-content:center;overflow:auto;padding:6px;background:#f5f5f5}
+.invoice{width:190mm;min-height:132mm;background:#fff;color:#111;font-family:Arial,Helvetica,sans-serif;padding:7mm 9mm 5mm;font-size:10.5px;line-height:1.15}
+.invoice-brand{text-align:center;font-size:12px;margin-bottom:1px;text-transform:uppercase}
+.invoice-emitente{text-align:center;font-size:10px;margin-bottom:9px}
+.invoice-line{display:flex;align-items:flex-end;gap:7px;border-bottom:1px solid #777;padding-bottom:3px;margin-bottom:7px;min-height:17px}
+.invoice-line span{display:flex;gap:7px;align-items:flex-end;width:100%}
+.invoice-line u{flex:1;text-decoration:none;border-bottom:0;min-width:40px;padding-left:3px}
+.invoice-line-compact{justify-content:space-between;border-bottom:0;margin-bottom:2px}
+.invoice-line-compact span:first-child{flex:1}
+.invoice-line-compact span:last-child{width:39%}
+.invoice-series{text-align:right;margin:2px 0 8px;font-size:10px}
+.invoice-series u,.invoice-number u,.invoice-date u{min-width:30px;text-decoration:none;border-bottom:1px dotted #555;padding:0 6px}
+.invoice-title{font-weight:700;font-size:13px;margin-top:3px}
+.invoice-subtitle{font-weight:700;font-size:10px;margin-top:3px}
+.invoice-number{text-align:right;font-size:11px;margin-top:-17px;margin-bottom:9px}
+.invoice-date{margin-bottom:7px;font-size:10px}
+.invoice-date u{min-width:105px;display:inline-block;text-align:center}
+.invoice table{width:100%;border-collapse:collapse;table-layout:fixed;margin-top:3px}
+.invoice th,.invoice td{border:1px solid #aaa;height:18px;padding:2px 5px;font-size:9.5px;vertical-align:middle}
+.invoice th{font-weight:700;text-align:left;background:#fff}
+.invoice .qty-col{width:10%;text-align:center}
+.invoice .price-col{width:18%;text-align:center}
+.invoice .total-col{width:17%;text-align:right}
+.invoice tbody td:nth-child(3){text-align:right}
+.invoice tbody td:nth-child(4){text-align:right}
+.invoice tbody .blank-row td{height:18px}
+.invoice tfoot td{height:21px;border-top:1px solid #777}
+.invoice .label-total{text-align:right;font-weight:700}
+.invoice .grand-total{text-align:right;font-weight:700}
+.invoice-footnote{font-size:7.4px;line-height:1.15;margin-top:7px;text-align:justify}
+.invoice-actions{justify-content:center!important}
